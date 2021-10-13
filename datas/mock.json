@@ -1,0 +1,82 @@
+[
+   {
+      "name": "david",
+      "age": 19,
+      "group": "teenager"
+   },
+   {
+      "name": "maria",
+      "age": 17,
+      "group": "teenager"
+   },
+   {
+      "name": "jean",
+      "age": 15,
+      "group": "teenager"
+   },
+   {
+      "name": "julia",
+      "age": 14,
+      "group": "teenager"
+   },
+   {
+      "name": "gisely",
+      "age": 3,
+      "group": "kid"
+   },
+   {
+      "name": "fiamma",
+      "age": 35,
+      "group": "adult"
+   },
+   {
+      "name": "tomas",
+      "age": 76,
+      "group": "elder"
+   },
+   {
+      "name": "felipe",
+      "age": 90,
+      "group": "elder"
+   },
+   {
+      "name": "mendoza",
+      "age": 58,
+      "group": "adult"
+   },
+   {
+      "name": "felicia",
+      "age": 67,
+      "group": "elder"
+   },
+   {
+      "name": "ana",
+      "age": 45,
+      "group": "adult"
+   },
+   {
+      "name": "maycon",
+      "age": 20,
+      "group": "adult"
+   },
+   {
+      "name": "yasmim",
+      "age": 20,
+      "group": "adult"
+   },
+   {
+      "name": "bia",
+      "age": 12,
+      "group": "kid"
+   },
+   {
+      "name": "marcio",
+      "age": 10,
+      "group": "kid"
+   },
+   {
+      "name": "maria",
+      "age": 24,
+      "group": "adult"
+   }
+]
