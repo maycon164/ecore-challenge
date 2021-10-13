@@ -14,13 +14,15 @@ module.exports = function (name, age) {
         throw new Error("age must be greater than 0");
     }
 
-    if (!age) {
-        throw new Error("age is empty");
-    }
-
     if (isNaN(age)) {
         throw new Error("age must be a number");
     }
 
+    age = parseInt(age);
+
+    if (!age & age != 0) {
+        throw new Error("age is empty");
+    }
+    
     return true;
 }

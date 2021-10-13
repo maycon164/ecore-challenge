@@ -27,7 +27,11 @@ module.exports = (app) => {
 
         }
 
-        return res.status(200).json({ person: list });
+        if (list) {
+            return res.status(200).json({ person: list });
+        }
+
+        return res.status(200).json({ message: "list is empty" });
 
     });
 
@@ -41,13 +45,16 @@ module.exports = (app) => {
         try {
 
             list = controller.getListByGroup(group, count);
-            
-            return res.status(202).json({ person: list });
 
         } catch (error) {
             return res.status(400).json({ error: error.message })
         }
 
+        if (list) {
+            return res.status(200).json({ person: list });
+        }
+
+        return res.status(200).json({ message: "list is empty" });
     });
 
     app.post(`${route}/`, (req, res) => {
@@ -56,7 +63,7 @@ module.exports = (app) => {
 
         try {
 
-            person = controller.add(req.body.name.trim(), req.body.age.trim());
+            person = controller.add(req.body.name, req.body.age);
 
         } catch (error) {
 

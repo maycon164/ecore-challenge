@@ -6,13 +6,14 @@ class PersonController {
 
     constructor() {
         this._listPerson = mock;
+        //this._listPerson = new Array();
     }
 
     add(name, age) {
 
         validator(name, age);
 
-        let person = new Person(name, age);
+        let person = new Person(name.trim(), age.trim());
 
         this._listPerson.push(person);
 
@@ -20,28 +21,44 @@ class PersonController {
     }
 
     getList(count) {
-        return this._listPerson.slice(0, count);
+
+        if (!this._isEmpty()) {
+            return this._listPerson.slice(0, count);
+        }
+
     }
 
     getListSortedByName(count) {
-        return this._listPerson.sort(this._sortByName).slice(0, count);
+
+        if (!this._isEmpty()) {
+            return this._listPerson.sort(this._sortByName).slice(0, count);
+        }
+
     }
 
     getListSortedByAge(count) {
-        return this._listPerson.sort(this._sortByAge).slice(0, count);
+
+        if (!this._isEmpty()) {
+            return this._listPerson.sort(this._sortByAge).slice(0, count);
+        }
+
     }
 
     getListByGroup(group, count) {
 
-        if (["kid", "teenager", "elder", "adult"].indexOf(group.toLowerCase()) >= 0) {
+        if (!this._isEmpty()) {
 
-            return this._listPerson.filter(person => {
-                return person.group === group;
-            }).slice(0, count);
+            if (["kid", "teenager", "elder", "adult"].indexOf(group.toLowerCase()) >= 0) {
 
-        } else {
+                return this._listPerson.filter(person => {
+                    return person.group === group;
+                }).slice(0, count);
 
-            throw new Error(`there is no ${group} group`);
+            } else {
+
+                throw new Error(`there is no ${group} group`);
+
+            }
 
         }
 
@@ -73,6 +90,9 @@ class PersonController {
         return 0;
     }
 
+    _isEmpty() {
+        return this._listPerson.length == 0;
+    }
 }
 
 module.exports = PersonController;
