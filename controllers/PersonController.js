@@ -2,7 +2,7 @@ const mock = require('../datas/mock.json');
 const Person = require('../models/Person');
 const validator = require('../utils/validator');
 
-class personController {
+class PersonController {
 
     constructor() {
         this._listPerson = mock;
@@ -75,4 +75,4 @@ class personController {
 
 }
 
-module.exports = personController;
+module.exports = PersonController;

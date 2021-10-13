@@ -1,10 +1,10 @@
 
-const personController = require('../controllers/personController');
+const PersonController = require('../controllers/PersonController');
 
 module.exports = (app) => {
 
     const route = "/api/v1/person";
-    const controller = new personController();
+    const controller = new PersonController();
 
     app.get(`${route}/`, (req, res) => {
 
